@@ -7,6 +7,6 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require_tree .
 
- $(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
+$(document).ready(function(){
+  $('.datepicker').datepicker();
+});
