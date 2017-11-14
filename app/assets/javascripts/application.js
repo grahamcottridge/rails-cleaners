@@ -7,9 +7,9 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require_tree .
 
-$(document).ready(function(){
-  $('.datepicker').datepicker();
-});
+ $(document).ready(function(){
+    $('.datepicker').datepicker({format: "yyyy-mm-dd"});
+  });
 
 function initMap(lat, lng, zoom) {
   const position = { lat: lat, lng: lng };
@@ -39,4 +39,3 @@ function getCoodinates() {
     initMap(coord.latitude, coord.longitude, 18);
   });
 }
-

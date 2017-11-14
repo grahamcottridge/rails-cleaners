@@ -1,14 +1,15 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-  end
 #/bookings
 #/cleaners/1/bookings
   def create
-    @booking = current_user.bookings.new(booking_params)
-    @booking.customer_id = current_user.id
-    @booking.cleaner_id = User.find(2)
-    @booking.save
+    @booking = Booking.new(date: booking_params[:date])
+    @booking.customer = current_user
+    @booking.cleaner = User.find(params[:user_id])
+    if @booking.save
+      redirect_to :root
+    else
+      redirect_back(fallback_location: fallback_location)
+    end
   end
 
   private
