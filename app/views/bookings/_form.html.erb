@@ -1,0 +1,4 @@
+<%= simple_form_for [@booking] do |f| %>
+<%= f.input :date, input_html: {class: "datepicker"}, placeholder: "Date", as: :string %>
+<%= f.submit "Book", class: "btn btn-danger" %>
+<% end %>
