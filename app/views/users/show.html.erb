@@ -1,10 +1,14 @@
 <div class="wrapper-white">
-  <div class="container" style="display: flex;">
-    <img src="http://via.placeholder.com/250x250" class="avatar">
-    <div class="profile-data" style="display: flex; justify-content: space-between;position: relative; width: 100%">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img src="http://via.placeholder.com/250x250" class="avatar">
+    </div>
+    <div class="col-xs-12 col-sm-4">
       <div class="user-data" style="flex: 1 1 auto;">
         <h3><%= @user.email %></h3>
       </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
       <div class="booking-form" style="text-align: center; width: 300px;">
         <h2>13€- first hour</h2>
         <h3><i class="glyphicon glyphicon-usd" style="color:#F86685;"></i>-7€ additional hours</h3>
@@ -16,17 +20,74 @@
         </form>
       </div>
     </div>
+
   </div>
 </div>
+<!-- Services offered-->
 <div class="wrapper-white">
   <div class="container">
     <h3>Services</h3>
     <div style="display: flex; justify-content: space-between;">
-      <i class="glyphicon glyphicon-asterisk service-active"></i>
-      <i class="glyphicon glyphicon-asterisk service-active"></i>
-      <i class="glyphicon glyphicon-asterisk service-active"></i>
-      <i class="glyphicon glyphicon-asterisk service-active"></i>
+      <i class="glyphicon glyphicon-asterisk service service-active"></i>
+      <i class="glyphicon glyphicon-asterisk service service-active"></i>
+      <i class="glyphicon glyphicon-asterisk service service-inactive"></i>
+      <i class="glyphicon glyphicon-asterisk service service-active"></i>
     </div>
-
   </div>
 </div>
+<!-- Geografical range -->
+<div class="map-range">
+  <h2>Working Area</h2>
+  <div id="map" style="height: 300px"></div>
+</div>
+<!-- Testimonials -->
+<div class="wrapper-white">
+  <div class="container">
+    <h3>Testimonials</h3>
+    <div class="testimonials-container">
+      <img src="http://via.placeholder.com/80x80" class="avatar">
+      <div class="testimonials-info">
+        <h3>Name</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <div class="ratings"  >
+          <i class="glyphicon glyphicon-star rating"></i>
+          <i class="glyphicon glyphicon-star rating"></i>
+          <i class="glyphicon glyphicon-star rating"></i>
+          <i class="glyphicon glyphicon-star rating"></i>
+          <p>(5 reviews)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-container">
+      <img src="http://via.placeholder.com/80x80" class="avatar">
+      <div class="testimonials-info">
+        <h3>Name</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <div class="ratings"></div>
+      </div>
+    </div>
+
+    <div class="testimonials-container">
+      <img src="http://via.placeholder.com/80x80" class="avatar">
+      <div class="testimonials-info">
+        <h3>Name</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <div class="ratings"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAP Javascript -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIpthMHHSftRPk2LYDXzmTU7mrptvW10"
+    async defer></script>
