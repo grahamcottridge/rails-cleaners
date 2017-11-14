@@ -5,8 +5,8 @@ class Booking < ApplicationRecord
   validates :cleaner_id, presence: true
   validates :customer_id, presence: true
   validates :date, presence: true
-  validates :status, presence: true
-  validates :payment_method, presence: true
+ # validates :status, presence: true
+  # validates :payment_method, presence: true
 
   def total_price
     8 * cleaner.hourly_rate
