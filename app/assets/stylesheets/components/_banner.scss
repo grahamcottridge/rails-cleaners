@@ -1,4 +1,7 @@
 .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // color: $dark-gray;
   position: relative;
   text-align: left;
@@ -7,9 +10,6 @@
   // background-size: cover !important;
   background-color: white;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, .5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 // .banner h1 {
 //   font-size: 50px;
@@ -28,3 +28,4 @@
   bottom: 20px;
   right:20px;
 }
+
