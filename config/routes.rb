@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   # get 'users/show'
 
-  resources :users
 
   devise_for :users
   root to: 'pages#home'
-  resources :cleaners do
+  resources :users, only: [:show] do
     resources :bookings, only: [:new, :create]
   end
 
