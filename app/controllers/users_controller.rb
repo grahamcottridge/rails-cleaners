@@ -25,3 +25,4 @@ class UsersController < ApplicationController
     return user
   end
 end
+
