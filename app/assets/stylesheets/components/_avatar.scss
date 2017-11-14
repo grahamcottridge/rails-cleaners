@@ -1,9 +1,23 @@
 .avatar {
   border-radius: 50%;
 }
-
+.avatar-sm {
+  width: 30px;
+  border-radius: 50%;
+}
 .avatar-xl {
-  height: 150px;
-  width: 150px; 
-  border: #5C5B5C 1px solid;
+  width: 50px;
+  border-radius: 50%;
+}
+.avatar-bordered {
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+.avatar-square {
+  width: 30px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }

@@ -5,10 +5,9 @@ class BookingsController < ApplicationController
 #/bookings
 #/cleaners/1/bookings
   def create
-
     @booking = current_user.bookings.new(booking_params)
     @booking.customer_id = current_user.id
-    @booking.cleaner_id = User.find(params[:cleaner_id])
+    @booking.cleaner_id = User.find(2)
     @booking.save
   end
 
