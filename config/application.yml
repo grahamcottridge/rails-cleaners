@@ -5,3 +5,5 @@ development:
 production:
   FB_ID: "1985042148419643"
   FB_SECRET: "7dfc83c5c9822c5b86f6b26f311cd745"
+
+CLOUDINARY_URL: "cloudinary://475971542781291:2Cvm_-9aseN8QvVI3sSPzmRYliw@dnyotziqv"
