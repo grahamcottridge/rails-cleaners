@@ -5,11 +5,10 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
-//= require_tree .
-
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require_tree .
 
  $(document).ready(function(){
     $('.datepicker').datepicker({format: "yyyy-mm-dd"});
