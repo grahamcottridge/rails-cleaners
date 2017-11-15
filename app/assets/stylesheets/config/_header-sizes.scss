@@ -10,8 +10,13 @@ h2 {
   font-size: 36px;
 }
 h3 {
-  font-size: 24px;
-  font-weight: bold;
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
 }
 h4 {
   font-size: 18px;
