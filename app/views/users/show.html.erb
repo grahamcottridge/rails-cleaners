@@ -7,8 +7,8 @@
       <div class="Annonce_headerLocalisation-mobile mobile-only">
         <strong>Lisboa</strong><span>&nbsp;</span></div>
         <div class="Annonce_header_img">
-         <img
-         class="photo" src="http://via.placeholder.com/250x250" />
+          <%= image_tag current_user.facebook_picture_url || cl_image_path( current_user.photo.path, :crop => "fill"), class: "photo"%>
+
          <div class="AnnonceProf_price mobile-only">
            <div>25€</div>
          </div>
