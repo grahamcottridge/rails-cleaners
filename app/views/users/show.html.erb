@@ -1,93 +1,121 @@
-<div class="wrapper-white">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <img src="http://via.placeholder.com/250x250" class="avatar">
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="user-data" style="flex: 1 1 auto;">
-        <h3><%= @user.email %></h3>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="booking-form" style="text-align: center; width: 300px;">
-        <h2>13€- first hour</h2>
-        <h3><i class="glyphicon glyphicon-usd" style="color:#F86685;"></i>-7€ additional hours</h3>
-        <form class="form-group">
-          <div class="form-group">
-            <input type="date" name="date" class="form-control">
+<div class="Annonce">
+ <div class="Annonce_header">
+  <div class="wrapper">
+   <div class="Annonce_headercontent">
+    <div class="Annonce_header_left">
+     <div class="Annonce_header_leftcontent">
+      <div class="Annonce_headerLocalisation-mobile mobile-only">
+        <strong>Lisboa</strong><span>&nbsp;</span></div>
+        <div class="Annonce_header_img">
+         <img
+         class="photo" src="http://via.placeholder.com/250x250" />
+         <div class="AnnonceProf_price mobile-only">
+           <div>25€</div>
+         </div>
+       </div>
+       <div class="Annonce_header_info">
+         <div class="Annonce_headerLocalisation desktop-only">
+           <strong>Lisboa</strong><span>&nbsp;</span></div>
+           <div class="Annonce_headerName">
+            <div class="prenom">Sinead</div>
           </div>
-          <button class="btn btn-watermelon btn-lg">Schedule cleaning</button>
-        </form>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- Services offered-->
-<div class="wrapper-white">
-  <div class="container">
-    <h3>Services</h3>
-    <div style="display: flex; justify-content: space-between;">
-      <i class="glyphicon glyphicon-asterisk service service-active"></i>
-      <i class="glyphicon glyphicon-asterisk service service-active"></i>
-      <i class="glyphicon glyphicon-asterisk service service-inactive"></i>
-      <i class="glyphicon glyphicon-asterisk service service-active"></i>
-    </div>
-  </div>
-</div>
-<!-- Geografical range -->
-<div class="map-range">
-  <h2>Working Area</h2>
-  <div id="map" style="height: 300px"></div>
-</div>
-<!-- Testimonials -->
-<div class="wrapper-white">
-  <div class="container">
-    <h3>Testimonials</h3>
-    <div class="testimonials-container">
-      <img src="http://via.placeholder.com/80x80" class="avatar">
-      <div class="testimonials-info">
-        <h3>Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.</p>
-        <div class="ratings">
-          <i class="glyphicon glyphicon-star rating"></i>
-          <i class="glyphicon glyphicon-star rating"></i>
-          <i class="glyphicon glyphicon-star rating"></i>
-          <i class="glyphicon glyphicon-star rating"></i>
-          <p>(5 reviews)</p>
+          <ul class="ratingV2">
+            <li class="starV2 star-fullV2"></li>
+            <li class="starV2 star-fullV2"></li>
+            <li class="starV2 star-fullV2"></li>
+            <li class="starV2 star-fullV2"></li>
+            <li class="starV2 star-fullV2"></li>
+            <li class="Annonce_headerAvis">(2 avaliações)</li>
+          </ul>
         </div>
       </div>
     </div>
-
-    <div class="testimonials-container">
-      <img src="http://via.placeholder.com/80x80" class="avatar">
-      <div class="testimonials-info">
-        <h3>Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.</p>
-        <div class="ratings"></div>
-      </div>
+    <div class="Annonce_header_right desktop-only">
+     <div class="Annonce_headerRcontent">
+      <div class="Annonce_headerPrice">
+       25€ <sup>/h</sup>
+       <sup>
+        <div class="Annonce_headerPrice-modal"></div>
+      </sup>
     </div>
+    <button class="btn btn-watermelon btn-lg">Book cleaning</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    <div class="testimonials-container">
-      <img src="http://via.placeholder.com/80x80" class="avatar">
-      <div class="testimonials-info">
-        <h3>Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.</p>
-        <div class="ratings"></div>
-      </div>
+<!-- -->
+
+<!-- Map -->
+<div class="Annonce">
+  <div class="Annonce_content">
+    <div class="Annonce_wrapper wrapper">
+      <h2>Services</h2>
+
+
+
     </div>
   </div>
 </div>
 
+
+<!-- Testimonial -->
+<div class="Annonce">
+  <div class="Annonce_content">
+    <div class="Annonce_wrapper wrapper">
+     <div class="avis_recos">
+      <div class="Annonce_full Annonce_avis" id="_avaliacao">
+       <h3 class="AnnonceContent_subTitle">
+        2 avaliações sobre Sinead
+        <ul class="ratingV2">
+         <li class="starV2 star-fullV2"></li>
+         <li class="starV2 star-fullV2"></li>
+         <li class="starV2 star-fullV2"></li>
+         <li class="starV2 star-fullV2"></li>
+         <li class="starV2 star-fullV2"></li>
+         <li class="Annonce_ratingword">5/5</li>
+       </ul>
+     </h3>
+     <div class="AnnonceContent_subTitle_text">
+     Todas as avaliações são coletadas pelo nosso serviço e são fiáveis. Elas correspondem a verdadeiras experiências dos membros do Superprof.</div>
+   </div>
+   <div class="Annonce_full Annonce_full-marginSmall">
+     <h3 class="AnnonceContent_subTitle2"> 2 avaliações </h3>
+     <div class="Annonce_evaluation">
+      <div class="avis ">
+       <div class="Annonce_evalComment">
+        <div class="Annonce_evalImg"><img src="imagens/membros/professor-particular-1364113.jpg" title="Mayumi" /></div>
+        <div class="Annonce_evalTxt">
+          <div class="Annonce_evalName">Mayumi <span>b2</span></div>
+          <p class="AnnonceContent_text">
+            <b>Perfeito!</b> I'm enjoying having lessons with Sinead! Now the classes are with my cousin and me and it has been really helpful. I highly recommend lessons with Sinead!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="avis ">
+     <div class="sep"></div>
+     <div class="Annonce_evalComment">
+      <div class="Annonce_evalImg">
+       <div class="user-no-picture">A</div>
+     </div>
+     <div class="Annonce_evalTxt">
+       <div class="Annonce_evalName">Andreia </div>
+       <p class="AnnonceContent_text">
+        <b>Perfeito!</b> I had private lessons with Sinead and I hardly recommend you to try! She is an amazing person and teacher, very enthusiastic and adaptable to your needs. I worked with her some vocabulary  (legal English) and fluency and i'm truly more confident. She was very helpful even when we were distant and couldn't meet.<br />
+        Thank you again Sinead !!
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!-- MAP Javascript -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIpthMHHSftRPk2LYDXzmTU7mrptvW10"
-    async defer></script>
+async defer></script>
