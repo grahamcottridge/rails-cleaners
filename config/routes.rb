@@ -1,9 +1,6 @@
-<<<<<<< HEAD
   Rails.application.routes.draw do
   # get 'users/show'
-=======
-Rails.application.routes.draw do
->>>>>>> 5e588b29e5085cd84c2f4ffd5f3f0d72c31a519e
+
 
   mount Attachinary::Engine => "/attachinary"
 
