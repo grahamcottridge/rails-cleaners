@@ -1,0 +1,11 @@
+<div class="container">
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li><%= link_to "Booking", booking_path(booking.id) %></li>
+
+  <% end %>
+</ul>
+
+
+</div>
