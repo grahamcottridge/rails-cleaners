@@ -6,7 +6,7 @@
   root to: 'pages#home'
 
   resources :users, only: [:show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show]
   end
 
   resources :bookings do

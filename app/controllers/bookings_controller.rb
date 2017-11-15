@@ -16,6 +16,18 @@ def create
   end
 end
 
+def update
+  @booking = Booking.find(params[:id])
+  if params[:status] == 'accepted'
+    @booking.status = params[:status]
+    @booking.save
+  elsif params[:status] == 'declined'
+    @booking.status = params[:status]
+    @booking.save
+  else params[:status] == 'pending'
+  end
+end
+
 private
 
 def booking_params
