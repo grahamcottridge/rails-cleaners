@@ -12,7 +12,7 @@
   end
 
   resources :bookings do
-    resources :reviews, only: [:show, :edit, :new]
+    resources :reviews, only: [:index, :show, :edit, :new]
   end
 end
 
