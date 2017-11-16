@@ -12,7 +12,7 @@
   end
 
   resources :users do
-    resources :reviews, only: [:index, :show, :edit, :new]
+    resources :reviews, only: [:index, :show, :edit, :new, :create]
   end
 end
 
