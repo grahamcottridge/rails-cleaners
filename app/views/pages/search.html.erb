@@ -1,33 +1,81 @@
 <section class="background-gray-lightest">
-      <div class="container">
-        <h1>Search</h1>
+  <div class="container">
+    <h1>Search</h1>
 
-        <form>
-           <div class="row">
-             <div class="col-sm-12">
-               <div class="form-group">
-                 <input id="address" name="address" type="text" class="form-control" placeholder="Enter your location, address, reference ">
-
-               </div>
-             </div>
-           </div>
-         </form>
-        <div id="map" style="width: 100%; height: 350px;"></div>
-          <% content_for(:after_js) do %>
-            <%= javascript_tag do %>
-            var handler = Gmaps.build('Google');
-            handler.buildMap({ internal: { id: 'map' } }, function() {
-            markers = handler.addMarkers(<%= raw @hash.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-            if (markers.length == 0) {
-            handler.getMap().setZoom(2);
-          } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-            }
-          });
-        <% end %>
+    <form>
+     <div class="row">
+       <div class="col-sm-12">
+         <div class="form-group">
+           <input id="address" name="address" type="text" class="form-control" placeholder="Enter your location, address, reference "></div>
+         </div>
+       </div>
+     </form>
+     <div id="map" style="width: 100%; height: 350px;"></div>
+     <% content_for(:after_js) do %>
+     <%= javascript_tag do %>
+       var handler = Gmaps.build('Google');
+       handler.buildMap({ internal: { id: 'map' } }, function() {
+       markers = handler.addMarkers(<%= raw @hash.to_json %>);
+       handler.bounds.extendWith(markers);
+       handler.fitMapToBounds();
+       if (markers.length == 0) {
+         handler.getMap().setZoom(2);
+       } else if (markers.length == 1) {
+       handler.getMap().setZoom(14);
+        }
+      });
       <% end %>
+    <% end %>
+  </div>
+  <section class="section--padding-bottom-small">
+    <div class="container">
+      <h2>Results</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="post">
+            <div class="image"><a href="#">
+              <img class=" avatar img-responsive" src="/assets/blog1-078400469da15c01dc81fe4f213eab75bdbda282b3cf8ff64acd3467c8672165.jpg" alt="Blog1"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="post" style="text-align:left">
+            <h3>Name</h3>
+            <ul>
+              <li>Hourly rate: 12€</li>
+              <li>Discount for aditional hours: 50%</li>
+              <li>Raring: ***** </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="post" style="text-align:center">Services</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="post">
+            <div class="image"><a href="#">
+              <img class=" avatar img-responsive" src="/assets/blog1-078400469da15c01dc81fe4f213eab75bdbda282b3cf8ff64acd3467c8672165.jpg" alt="Blog1"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="post" style="text-align:left">
+            <h3>Name</h3>
+            <ul>
+              <li>Hourly rate: 12€</li>
+              <li>Discount for aditional hours: 50%</li>
+              <li>Raring: ***** </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="post" style="text-align:center">Services</div>
+        </div>
+      </div>
     </div>
+  </section>
   </div>
 </section>
