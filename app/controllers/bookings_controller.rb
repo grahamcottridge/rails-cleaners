@@ -20,13 +20,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(date: booking_params[:date])
+    @booking = Booking.new(booking_params)
     @booking.customer = current_user
     @booking.cleaner = User.find(params[:user_id])
     if @booking.save
-      redirect_to :root
+      redirect_to user_booking_path(user_id:current_user.id, id:@booking.id)
     else
-      redirect_back(fallback_location: fallback_location)
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -45,6 +45,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-   params.require(:booking).permit(:date)
+   params.require(:booking).permit(:date, :message, :hrs_work, :address)
   end
 end
