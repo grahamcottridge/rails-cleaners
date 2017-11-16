@@ -7,8 +7,10 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  geocoded_by :address
+  validates :address, presence: true
   after_validation :geocode, if: :address_changed?
+
+  geocoded_by :address
 
    def self.find_for_facebook_oauth(data)
       email = data.info.email

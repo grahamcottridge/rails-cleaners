@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   #/bookings
   #/cleaners/1/bookings
-
   def index
     # Lists all the users booking
     if current_user.role_cleaner == true
