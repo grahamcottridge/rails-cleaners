@@ -1,8 +1,18 @@
 class BookingsController < ApplicationController
 #/bookings
 #/cleaners/1/bookings
+
+def index
+  @bookings = Booking.all
+
+end
 def show
   @booking = Booking.find(params[:id])
+end
+
+def new
+  @user = User.find(params[:user_id])
+  @booking = Booking.new
 end
 
 def create

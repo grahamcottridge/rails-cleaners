@@ -12,23 +12,23 @@
     <!-- Links when logged in -->
     <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
 
-        <% avatar_url = current_user.facebook_picture_url || current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "" %>
+        <% avatar_url = current_user.facebook_picture_url || "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".account", default: "Profile") %>
+            <%= link_to user_path(id: current_user.id) do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
           <li>
             <%= link_to edit_user_registration_path do %>
-            <i class="fa fa-home"></i>  <%= t(".profile", default: "Account") %>
+            <i class="fa fa-home"></i>  <%= t(".account", default: "Account") %>
             <% end %>
           </li>
           <li>

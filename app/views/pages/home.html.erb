@@ -1,100 +1,41 @@
-
-  <div class="banner">
+<div class="banner" style="background:  linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path("flaming_cocktails_xxfxfa.jpg")%>');">
   <div class="banner-content">
-    <h1>Find cleaning professionals</h1>
-    <h2>in your area</h2>
-    <form class="form-inline">
-      <select class="form-control form-control-lg">
-        <option>General cleaning</option>
-        <option>Ironing</option>
-        <option>House sitting</option>
-        <option>Pet cleanup</option>
-      </select>
-      <input type="text" name="location" class="form-control form-control-lg">
-      <button class="btn btn-primary btn-lg">Search</button>
-    </form>
-    <div class="avg-rate">
-      <h4> Average hourly rate: 12€</h4>
+    <h1>Welcome easy cleaners</h1>
+    <p>Find service providers in your area</p>
+    <div class="search-form">
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="card-container">
-    <h3>Local Service Providers</h3>
-    <div class="row">
-      <% @users.each do |user|%>
-      <div class="col-xs-12 col-md-4">
-       <div class="card">
-         <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(        <%= image_path current_user.facebook_picture_url || "http://kitt.lewagon.com/placeholder/users/ssaunier"  %>);">
-          <h2><%= user.email %></h2>
-      </div>
-      <div class="card-footer">
-       <div class="rating">
-        <i class="glyphicon glyphicon-star"></i>
-        <i class="glyphicon glyphicon-star"></i>
-        <i class="glyphicon glyphicon-star"></i>
-        <i class="glyphicon glyphicon-star"></i>
-        <i class="glyphicon glyphicon-star"></i>
-      </div>
+  <div class="category-carousel">
+    <div class="header">
+      <h3>Explore service providers in your area.</h3>
+      <%= link_to "See All >", "#", class: "link" %>
     </div>
   </div>
-</div>
-<% end %>
-
-
-</div>
-</div>
-<!-- end card-->
-<!-- end rrow-->
-
-
-
-<h2>Testimonials</h2>
-<div class="testimonials-container">
- <img class="avatar avatar-xl" src="http://i.pravatar.cc/100"></img>
- <div class="testimonials-info">
-  <h3>Amanda</h3>
-  <p>"The way Amanda cleaned my house reminded me of my mother- everything was spotless when I arrived home!"- Joy from Manhattan</p>
-  <div class="rating">
-    <i class="glyphicon glyphicon-star"></i>
-    <i class="glyphicon glyphicon-star"></i>
-    <i class="glyphicon glyphicon-star"></i>
-    <i class="glyphicon glyphicon-star"></i>
-    <i class="glyphicon glyphicon-star"></i>
-  </div>
-  <h4>21 reviews</h4>
-</div>
-</div>
-
-
-
-<h1>How does it work?</h1>
-<div class="how-it-works">
   <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <img src="http://via.placeholder.com/350x150">
-      <p style="color: #EA4389";>Step 1:</p>
-      <p>Locate a provider using our search</p>
+    <% @users.each do |user| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card">
+        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(<%= user.photo? ? cl_image_path( user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150" %>);">
+
+          <div class="card-description">
+            <h2><%= user.first_name %></h2>
+
+          </div>
+          <img class="card-user avatar avatar-large" src="images/jad.png">
+          <%= link_to user.first_name, user_path(id: user.id), class: "card-link" %>
+        </div>
+        <div class="card-footer">
+
+          <div class="controls">
+            <a href="#"><i class="fa fa-star"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-share"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <img src="http://via.placeholder.com/350x150">
-      <p style="color: #EA4389";>Step 2:</p>
-      <p>Connect with your matches</p>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <img src="http://via.placeholder.com/350x150">
-      <p style="color: #EA4389";>Step 3:</p>
-      <p>Book a cleaning visit</p>
-    </div>
+    <% end %>
   </div>
-</div>
-
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "cleaners.jpeg" %>);">
-  <div class="banner-content">
-    <h1>Come work with us and become a certified service provider</h1>
-    <a class="btn btn-primary btn-lg">Register Now</a>
-  </div>
-</div>
-
-
 </div>
