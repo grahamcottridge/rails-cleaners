@@ -3,12 +3,13 @@ class PagesController < ApplicationController
 
   def home
     @users = User.all
-    @cleaners = User.where.not(latitude: nil, longitude: nil)
-    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
+    @cleaners = User.near('Rua da Sociedade Farmaceutica Lisboa', 100)
+    @hash = Gmaps4rails.build_markers(@cleaners) do |cleaner, marker|
+      marker.lat cleaner.latitude
+      marker.lng cleaner.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
-
   def search
     # address = params[:address]
 
@@ -20,7 +21,3 @@ class PagesController < ApplicationController
     end
   end
 end
-end
-
-
-# .where.not(latitude: nil, longitude: nil, role_cleaner: true)
