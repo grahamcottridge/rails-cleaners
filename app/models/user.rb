@@ -7,6 +7,8 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  has_many :reviews
+  geocoded_by :address
   validates :address, presence: true
   after_validation :geocode, if: :address_changed?
 
