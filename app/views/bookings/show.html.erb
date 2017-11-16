@@ -1,4 +1,4 @@
-<h2>Booking show view</h2>
+<h2>Booking with <%= User.find(@booking.cleaner_id).first_name %></h2>
 
 <div class="cleaner-view">
 <% if current_user.role_cleaner%>
@@ -13,5 +13,6 @@
   <% else %>
   <p>Booking details: <%= @booking.date %> for <%= @booking.hrs_work %> hours </p>
   <p>Amount to pay: <%= @booking.total_price %> $ </p>
+  <p>Address: <%= @booking.address %> $ </p>
   <p>Status of booking: <%= @booking.status %> </p>
 <% end %>
