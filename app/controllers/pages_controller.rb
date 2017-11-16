@@ -8,5 +8,5 @@ class PagesController < ApplicationController
       marker.lat user.latitude
       marker.lng user.longitude
   end
-
+end
 end

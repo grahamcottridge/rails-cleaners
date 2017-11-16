@@ -1,0 +1,13 @@
+<div class="message">
+ <% avatar_url = current_user.facebook_picture_url || (current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150") %>
+ <div class="message-name">
+ </div>
+ <div class="message-body">
+  <% @review.rating.to_i.times do  %>
+  <span class="glyphicon glyphicon-star"></span>
+  <% end %>
+  <p>
+   <%= @review.testimonial %>
+ </p>
+</div>
+</div>
