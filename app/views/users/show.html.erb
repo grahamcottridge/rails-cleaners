@@ -26,7 +26,7 @@
           <p class="post__intro">
             <input type="date" name="date">
           </p>
-          <p class="read-more"><a href="#" class="btn btn-ghost">Book cleaning</a></p>
+          <p> <%= link_to "Book cleaning", new_user_booking_path(@user.id), class: "btn btn-ghost" %></p>
           <% end %>
           <%= link_to "Add review", new_user_review_path(user_id: @user.id), class: "btn btn-ghost" %>
         </div>
