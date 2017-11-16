@@ -9,7 +9,13 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require_tree .
+//= require underscore
+//= require gmaps/google
+//= require barunka/bootstrap.min.js
+//= require barunka/jquery.cookie.js
+//= require barunka/lightbox.min.js
+//= require barunka/front.js
 
- $(document).ready(function(){
-    $('.datepicker').datepicker({format: "yyyy-mm-dd"});
-  });
+$(document).ready(function(){
+  $('.datepicker').datepicker({format: "yyyy-mm-dd"});
+});
