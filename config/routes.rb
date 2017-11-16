@@ -9,8 +9,6 @@
   root to: 'pages#home'
   get 'search', to: 'pages#search'
 
-  get 'search', to: 'pages#search'
-
   resources :users, only: [:show, :edit, :update] do
     resources :bookings
     resources :reviews, only: [:index, :show, :edit, :new, :create]
