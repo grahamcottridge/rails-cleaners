@@ -30,44 +30,25 @@
   <section class="section--padding-bottom-small">
     <div class="container">
       <h2>Results</h2>
+      <% @cleaners.each do |cleaner| %>
+      <%= link_to user_path(id: cleaner.id) do %>
       <div class="row">
         <div class="col-sm-4">
           <div class="post">
-            <div class="image"><a href="#">
-              <img class=" avatar img-responsive" src="/assets/blog1-078400469da15c01dc81fe4f213eab75bdbda282b3cf8ff64acd3467c8672165.jpg" alt="Blog1"></a>
+            <div class="image">
+              <% avatar_url = cleaner.facebook_picture_url || (cleaner.photo? ? cl_image_path(cleaner.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150") %>
+              <%= cl_image_tag avatar_url, class: "avatar img-responsive" %>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="post" style="text-align:left">
-            <h3>Name</h3>
-            <ul>
-              <li>Hourly rate: 12€</li>
-              <li>Discount for aditional hours: 50%</li>
-              <li>Raring: ***** </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="post" style="text-align:center">Services</div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="post">
-            <div class="image"><a href="#">
-              <img class=" avatar img-responsive" src="/assets/blog1-078400469da15c01dc81fe4f213eab75bdbda282b3cf8ff64acd3467c8672165.jpg" alt="Blog1"></a>
-            </div>
-          </div>
-        </div>
         <div class="col-sm-4">
           <div class="post" style="text-align:left">
-            <h3>Name</h3>
+            <h3><%= cleaner.first_name%></h3>
             <ul>
-              <li>Hourly rate: 12€</li>
+              <li>Hourly rate: <%= cleaner.hourly_rate%></li>
               <li>Discount for aditional hours: 50%</li>
-              <li>Raring: ***** </li>
+              <li>Rating: ***** </li>
             </ul>
           </div>
         </div>
@@ -75,6 +56,8 @@
           <div class="post" style="text-align:center">Services</div>
         </div>
       </div>
+      <% end %>
+      <% end %>
     </div>
   </section>
   </div>
