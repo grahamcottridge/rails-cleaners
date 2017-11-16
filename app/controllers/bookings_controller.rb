@@ -4,7 +4,11 @@ class BookingsController < ApplicationController
 
   def index
     # Lists all the users booking
-    @bookings = Booking.all
+    if current_user.role_cleaner == true
+      @bookings = Booking.where(cleaner_id: current_user.id)
+    else
+      @bookings = Booking.where(customer_id: current_user.id)
+    end
   end
 
   def show
