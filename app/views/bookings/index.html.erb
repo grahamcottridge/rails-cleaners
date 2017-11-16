@@ -1,4 +1,12 @@
 <div class="container">
+  <section class="section--padding-bottom-small">
+    <div class="container">
+<% if current_user.role_cleaner? %>
+<h1><i class="pe-7s-piggy"></i> Earnings</h1>
+<h3>Hello <%= current_user.first_name %>, you have made earned: XXX € this month.</h3>
+<% end %></div></section>
+
+
 <section class="section--padding-bottom-small">
     <div class="container">
       <h2>Results</h2>
@@ -22,6 +30,7 @@
               <li>Hourly rate: <%= cleaner.hourly_rate%></li>
               <li>Discount for aditional hours: 50%</li>
               <li>Rating: ***** </li>
+              <li>Received at: <%= booking.created_at%> </li>
             </ul>
           </div>
         </div>
