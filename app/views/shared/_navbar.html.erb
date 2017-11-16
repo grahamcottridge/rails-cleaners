@@ -15,7 +15,7 @@
             <li><%= link_to "Search", "#" %></li>
             <li><%= link_to "Bookings", user_bookings_path(user_id: current_user.id) %></li>
             <li class="dropdown">
-              <% avatar_url = current_user.facebook_picture_url || current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150" %>
+              <% avatar_url = current_user.facebook_picture_url || (current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150") %>
               <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                 UserPhoto<b class="caret"></b>
               </a>
