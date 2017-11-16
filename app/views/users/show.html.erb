@@ -73,7 +73,9 @@
       <% @user.reviews.each do |review| %>
       <ul>
         <li>
-          <%= review.rating %>
+          <% review.rating.to_i.times do  %>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end %>
           <%= review.testimonial %>
         </li>
       </ul>
