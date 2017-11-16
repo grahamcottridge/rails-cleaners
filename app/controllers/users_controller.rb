@@ -1,9 +1,17 @@
 class UsersController < ApplicationController
   
-
   def show
   	@user = User.find(params[:id])
     @booking = Booking.new
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
   end
 
   def self.find_for_facebook_oauth(auth)
@@ -26,5 +34,12 @@ class UsersController < ApplicationController
 
     return user
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :photo)
+  end
+
 end
 
