@@ -1,5 +1,5 @@
-<%= simple_form_for([ booking, review ]) do |form| %>
-  <%= form.input :testimonial, as: :text %>
-  <%= form.input :rating, as: :number %>
-  <%= form.button :submit %>
+<%= simple_form_for [@user, @review] do |f| %>
+  <%= f.input :testimonial %>
+  <%= f.input :rating, collection: [0,1,2,3,4,5] %>
+  <%= f.button :submit %>
 <% end %>

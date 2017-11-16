@@ -1,16 +1,17 @@
 class ReviewsController < ApplicationController
   def new
-  	@review = Review.new
+    @user = User.find(params[:user_id])
+    @review = Review.new
   end
 
   def create
-  	@booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
-    @review.booking = @booking
+  	@user = User.find(params[:user_id])
+    @review.user_id = @user.id
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to user_path(@user)
     else
-      render 'bookings/show'
+      render "new"
     end
   end
 
@@ -25,6 +26,6 @@ class ReviewsController < ApplicationController
 private
 
   def review_params
-    params.require(:review).permit(:testimonial)
+    params.require(:review).permit(:testimonial, :rating)
   end
 end

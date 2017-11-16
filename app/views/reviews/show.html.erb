@@ -1,2 +1,8 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<p>Review</p>
+<% @review.rating.to_i.times do  %>
+ <span class="glyphicon glyphicon-star"></span>
+<% end %>
+<div><%= @review.testimonial %></div>
+
+
+
