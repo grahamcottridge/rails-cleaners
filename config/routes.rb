@@ -11,7 +11,7 @@
     resources :bookings, only: [:new, :create, :show]
   end
 
-  resources :bookings do
+  resources :users do
     resources :reviews, only: [:index, :show, :edit, :new]
   end
 end

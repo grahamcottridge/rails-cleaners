@@ -1,4 +1,4 @@
-<%= simple_form_for([ booking, review ]) do |form| %>
+<%= simple_form_for([ @user, @review ]) do |form| %>
   <%= form.input :testimonial, as: :text %>
   <%= form.input :rating, as: :number %>
   <%= form.button :submit %>
