@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show
   	@user = User.find(params[:id])
@@ -10,6 +9,15 @@ class UsersController < ApplicationController
       marker.lng user.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
   end
 
   def self.find_for_facebook_oauth(auth)
@@ -33,12 +41,10 @@ class UsersController < ApplicationController
     return user
   end
 
-  protected
+  private
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit({ role_cleaner: [] }, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :photo)
   end
 
 end

@@ -18,17 +18,15 @@ class User < ApplicationRecord
 
       if user.nil?
           User.create({
-              provider: "facebook",
-              uid: uid,
-              email: email,
-              first_name: data.info.first_name,
+            provider: "facebook",
+            uid: uid,
+            first_name: data.info.first_name,
             last_name: data.info.last_name,
+            email: email,
             facebook_picture_url: data.info.image,
             password: Devise.friendly_token[0,20]
           })
-          # Need to create the user
       else
-          # return the user
           user
       end
   end

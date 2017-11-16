@@ -15,3 +15,7 @@
 //= require barunka/jquery.cookie.js
 //= require barunka/lightbox.min.js
 //= require barunka/front.js
+
+$(document).ready(function(){
+  $('.datepicker').datepicker({format: "yyyy-mm-dd"});
+});
