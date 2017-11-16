@@ -1,6 +1,72 @@
-<div class="simple-form">
-<%= simple_form_for [@user, @booking] do |f| %>
-<%= f.input :date, input_html: {class: "datepicker"}, placeholder: "Date", as: :string %>
-<%= f.submit "Book", class: "btn btn-danger" %>
-<% end %>
-</div>
+
+
+<div class="page">
+<div class="Annonce" style="margin-top: 60px;">
+<div class="Annonce_content">
+
+                           <div class="Annonce_wrapper wrapper">
+                              <div class="avis_recos">
+                                 <div
+                                    class="Annonce_full Annonce_avis" id="_avaliacao">
+                                    <h3 class="AnnonceContent_subTitle">
+                                       2 avaliações sobre <%= @user.first_name%>
+                                       <ul
+                                          class="ratingV2">
+                                          <li class="starV2 star-fullV2"></li>
+                                          <li class="starV2 star-fullV2"></li>
+                                          <li class="starV2 star-fullV2"></li>
+                                          <li class="starV2 star-fullV2"></li>
+                                          <li class="starV2 star-fullV2"></li>
+                                          <li
+                                             class="Annonce_ratingword">5/5</li>
+                                       </ul>
+                                    </h3>
+                                 </div>
+                                 <div class="Annonce_full Annonce_full-marginSmall">
+                                    <div
+                                       class="Annonce_evaluation">
+                                       <div
+                                          class="avis ">
+                                          <div
+                                             class="Annonce_evalComment">
+                                             <div
+                                                class="Annonce_evalImg"><img src="imagens/membros/professor-particular-1364113.jpg" title="Mayumi" /></div>
+                                             <div
+                                                class="Annonce_evalTxt">
+                                                <div
+                                                   class="Annonce_evalName">Mayumi <span>b2</span></div>
+                                                <p
+                                                   class="AnnonceContent_text">
+                                                   <b>Perfeito!</b> Testimonial
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div
+                                          class="avis ">
+                                          <div
+                                             class="sep"></div>
+                                          <div
+                                             class="Annonce_evalComment">
+                                             <div
+                                                class="Annonce_evalImg">
+                                                <div class="user-no-picture">A</div>
+                                             </div>
+                                             <div
+                                                class="Annonce_evalTxt">
+                                                <div
+                                                   class="Annonce_evalName">User name </div>
+                                                <p
+                                                   class="AnnonceContent_text">
+                                                   <b>Perfeito!</b> Testimonial
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>

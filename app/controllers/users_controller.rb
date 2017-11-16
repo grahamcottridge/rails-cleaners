@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
-  
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show
   	@user = User.find(params[:id])
     @booking = Booking.new
+    # @user_coordinates = { lat: @user.latitude, lng: @user.longitude }
+    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def self.find_for_facebook_oauth(auth)
@@ -26,5 +32,14 @@ class UsersController < ApplicationController
 
     return user
   end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit({ role_cleaner: [] }, :email, :password, :password_confirmation)
+    end
+  end
+
 end
 

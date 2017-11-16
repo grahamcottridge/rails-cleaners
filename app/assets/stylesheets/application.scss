@@ -1,25 +1,34 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+// @import "config/fonts";
+// @import "config/colors";
+// @import "config/bootstrap_variables";
 
-// External libraries
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "bootstrap-datepicker3";
+// // External libraries
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
+// @import "bootstrap-datepicker3";
 
 
-// Your CSS partials
-@import "layouts/index";
-@import "components/index";
-@import "pages/index";
-@import "config/header-sizes";
-@import "components/avatar";
-@import "components/button-watermelon";
-@import "components/wrapper-white";
-@import "components/service-status";
-@import "components/testimonials";
-@import "components/rating";
-@import "components/footer";
+// // Your CSS partials
+// @import "layouts/index";
+// @import "components/index";
+// @import "pages/index";
+// @import "config/header-sizes";
+// @import "components/avatar";
+// @import "components/button-watermelon";
+// @import "components/wrapper-white";
+// @import "components/service-status";
+// @import "components/testimonials";
+// @import "components/rating";
+// @import "components/footer";
+// @import "components/text-center";
+// @import "components/login-form-wrapper";
+@import "barunka/bootstrap.min.css";
+@import "barunka/font-awesome.min.css";
+@import "barunka/pe-icon-7-stroke.css";
+@import "https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,400";
+@import "barunka/lightbox.min.css";
+@import "barunka/style.default.css";
+@import "barunka/custom.css";
