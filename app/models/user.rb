@@ -7,6 +7,9 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
    def self.find_for_facebook_oauth(data)
       email = data.info.email
       uid = data.uid
@@ -15,17 +18,15 @@ class User < ApplicationRecord
 
       if user.nil?
           User.create({
-              provider: "facebook",
-              uid: uid,
-              email: email,
-              first_name: data.info.first_name,
+            provider: "facebook",
+            uid: uid,
+            first_name: data.info.first_name,
             last_name: data.info.last_name,
+            email: email,
             facebook_picture_url: data.info.image,
             password: Devise.friendly_token[0,20]
           })
-          # Need to create the user
       else
-          # return the user
           user
       end
   end

@@ -1,59 +1,36 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.png" %>
-  <% end %>
+<header class="header">
+  <div role="navigation" class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to "Barunka", root_path, class: "navbar-brand"%>
+        <div class="navbar-buttons">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="fa fa-align-justify"></i></button>
+        </div>
+      </div>
+      <div id="navigation" class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+           <% if user_signed_in? %>
+           <!-- Links when logged in -->
+            <li class="active"><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Search", "#" %></li>
+            <li><%= link_to "Bookings", bookings_path %></li>
+            <li class="dropdown">
+              <% avatar_url = current_user.facebook_picture_url || current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150" %>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                UserPhoto<b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+              <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
+              <li><%= link_to "Account", edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></a></li>
+              </ul>
+            </li>
+          </ul>
+          <% else %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn navbar-btn btn-ghost" %>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-    <!-- Links when logged in -->
-    <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-
-        <% avatar_url = current_user.facebook_picture_url || "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
-        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to user_path(id: current_user.id) do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to edit_user_registration_path do %>
-            <i class="fa fa-home"></i>  <%= t(".account", default: "Account") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
-        </ul>
+          <% end %>
+        </div>
       </div>
     </div>
-    <% else %>
-    <!-- Login link (when logged out) -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
+  </header>

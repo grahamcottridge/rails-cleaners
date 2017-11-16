@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(version: 20171116110858) do
     t.text     "bio"
     t.string   "location"
     t.boolean  "role_cleaner",           default: false
+    t.string   "address"
+    t.string   "city"
+    t.string   "country"
+    t.string   "postal_code"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
