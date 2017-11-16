@@ -1,12 +1,36 @@
-<br><br><br><br><br><br><br><br>
 <div class="container">
+<section class="section--padding-bottom-small">
+    <div class="container">
+      <h2>Results</h2>
+      <% @bookings.each do |booking| %>
+      <% cleaner = User.find(booking.cleaner_id) %>
+      <%= link_to user_booking_path(user_id: current_user.id, id: booking.id) do %>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="post">
+            <div class="image">
+              <% avatar_url = cleaner.facebook_picture_url || (cleaner.photo? ? cl_image_path(cleaner.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150") %>
+              <%= cl_image_tag avatar_url, class: "avatar img-responsive" %>
+            </div>
+          </div>
+        </div>
 
-<ul>
-  <% @bookings.each do |booking| %>
-  <li><%= link_to "Booking", user_booking_path(user_id: current_user.id, id: booking.id) %></li>
-
-  <% end %>
-</ul>
-
-
+        <div class="col-sm-4">
+          <div class="post" style="text-align:left">
+            <h3><%= cleaner.first_name%></h3>
+            <ul>
+              <li>Hourly rate: <%= cleaner.hourly_rate%></li>
+              <li>Discount for aditional hours: 50%</li>
+              <li>Rating: ***** </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="post" style="text-align:center">Services</div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </section>
 </div>
