@@ -2,7 +2,7 @@
   <div role="navigation" class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <%= link_to "Barunka", root_path, class: "navbar-brand"%>
+        <%= link_to "Easy Cleaners", root_path, class: "navbar-brand"%>
         <div class="navbar-buttons">
           <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="fa fa-align-justify"></i></button>
         </div>
@@ -13,7 +13,7 @@
            <!-- Links when logged in -->
             <li class="active"><%= link_to "Home", root_path %></li>
             <li><%= link_to "Search", "#" %></li>
-            <li><%= link_to "Bookings", bookings_path %></li>
+            <li><%= link_to "Bookings", user_bookings_path(user_id: current_user.id) %></li>
             <li class="dropdown">
               <% avatar_url = current_user.facebook_picture_url || current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150" %>
               <a href="#" data-toggle="dropdown" class="dropdown-toggle">
