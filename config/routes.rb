@@ -8,10 +8,7 @@
   root to: 'pages#home'
 
   resources :users, only: [:show, :edit, :update] do
-    resources :bookings, only: [:new, :create, :show]
-  end
-
-  resources :users do
+    resources :bookings
     resources :reviews, only: [:index, :show, :edit, :new, :create]
   end
 end
