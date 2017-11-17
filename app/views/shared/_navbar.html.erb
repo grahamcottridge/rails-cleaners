@@ -17,7 +17,7 @@
             <li class="dropdown">
               <% avatar_url = current_user.facebook_picture_url || (current_user.photo? ? cl_image_path( current_user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150") %>
               <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                UserPhoto<b class="caret"></b>
+                <%= image_tag avatar_url, class: "avatar-sm" %>
               </a>
               <ul class="dropdown-menu">
               <li><%= link_to "Profile", user_path(id: current_user.id) %></li>
