@@ -31,7 +31,10 @@
           </p>
           <p> <%= link_to "Book cleaning", new_user_booking_path(@user.id), class: "btn btn-ghost" %></p>
           <% end %>
-          <%= link_to "Add review", new_user_review_path(user_id: @user.id), class: "btn btn-ghost" %>
+
+
+          <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#myModal">Add Review</button>
+
         </div>
       </div>
     </div>
@@ -122,3 +125,28 @@
 </div>
 </div>
 </section>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Review Form</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@user, @review] do |f| %>
+        <div class="testimonial-input"> <%= f.input :testimonial %></div>
+        <div class="rating-input">
+          <%= f.input :rating, collection: [0,1,2,3,4,5] %> </div>
+          <%= f.button :submit, class: "btn btn-ghost" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

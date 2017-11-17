@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       marker.lat user.latitude
       marker.lng user.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    @review = Review.new
     end
   end
 
