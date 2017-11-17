@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Review.delete_all
 Booking.delete_all
 User.delete_all
 address_client = [
@@ -110,7 +111,7 @@ address_cleaner.each do |address|
     address: address, #address_cleaner.shuffle!.pop,
     role_cleaner: true,
     )
-  new_cleaner.photo_url = cleaner_pictures.shuffle!.pop
+  #new_cleaner.photo_url = cleaner_pictures.shuffle!.pop
   #new_cleaner.send(:photo_url=, cleaner_pictures.shuffle!.pop, folder: Rails.env.to_s, use_filename: true, image_metadata: true)
   new_cleaner.save
 end  
