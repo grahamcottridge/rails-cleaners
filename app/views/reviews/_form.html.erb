@@ -1,5 +1,17 @@
-<%= simple_form_for [@user, @review] do |f| %>
-  <%= f.input :testimonial %>
-  <%= f.input :rating, collection: [0,1,2,3,4,5] %>
-  <%= f.button :submit %>
-<% end %>
+<section class="background-gray-lightest">
+
+  <div class="container clearfix">
+  <div class="header"><h4>Please add a review for <%= @user.first_name %> <%= @user.last_name %></h4>
+  </div>
+    <%= simple_form_for [@user, @review] do |f| %>
+    <div class="testimonial-input"> <%= f.input :testimonial %></div>
+    <div class="rating-input">
+      <%= f.input :rating, collection: [0,1,2,3,4,5] %> </div>
+      <%= f.button :submit, class: "btn btn-ghost" %>
+      <% end %>
+    </div>
+  </section>
+
+
+
+
