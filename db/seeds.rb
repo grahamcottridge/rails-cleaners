@@ -110,6 +110,7 @@ address_cleaner.each do |address|
     password: "123456",
     address: address, #address_cleaner.shuffle!.pop,
     role_cleaner: true,
+    hourly_rate: rand(10..15)
     )
   #new_cleaner.photo_url = cleaner_pictures.shuffle!.pop
   #new_cleaner.send(:photo_url=, cleaner_pictures.shuffle!.pop, folder: Rails.env.to_s, use_filename: true, image_metadata: true)
@@ -118,17 +119,6 @@ end
 
 
 
-bookings = [
-
-]
-customers.each do |customer|
-  Booking.create( 
-    date: Faker::Date.forward(14),
-    address: address_client.shuffle!.pop,
-    customer_id: customer.id,
-    cleaner_id: rand(1..3),
-  )
-end
 
 
 
