@@ -8,7 +8,7 @@
             <%= cl_image_tag user_photo, class: "img-responsive" %>
             <h1><%= @user.first_name%> <% @user.reviews.average(:rating).to_i.times do  %>
               <span class="pe-7s-star"></span>
-            <% end %>
+              <% end %>
             </h1>
           </div>
         </div>
@@ -29,7 +29,7 @@
           <p class="post__intro">
             <input type="date" name="date">
           </p>
-          <p> <%= link_to "Book cleaning", new_user_booking_path(@user.id), class: "btn btn-ghost" %></p>
+          <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#BookingModal">Add Booking</button>
           <% end %>
 
 
@@ -78,20 +78,20 @@
     <h2>Reviews</h2>
     <div class="cleaners-review-container">
       <% @user.reviews.each do |review| %>
-           <div class="cleaners-review">
-             <div class="input">
-               <div class="rating">
-                <% review.rating.to_i.times do  %>
-                <span class="pe-7s-star"></span>
-                <% end %>
-              </div>
-              <div class="testimonial">
-                <%= review.testimonial %>
-              </div>
-            </div>
-          </div>
+      <div class="cleaners-review">
+       <div class="input">
+         <div class="rating">
+          <% review.rating.to_i.times do  %>
+          <span class="pe-7s-star"></span>
+          <% end %>
+        </div>
+        <div class="testimonial">
+          <%= review.testimonial %>
+        </div>
+      </div>
+    </div>
 
-      <% end %>
+    <% end %>
   </div>
 
 </div>
@@ -127,7 +127,7 @@
 </section>
 
 
-<!-- Modal -->
+<!-- Modal Review-->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -149,4 +149,48 @@
     </div>
 
   </div>
-</div>
+
+  <!-- Modal Booking-->
+  <div id="BookingModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">New Booking</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+
+                    <%= simple_form_for [@user, @booking] do |f| %>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <%= f.input :date, input_html: {id: "datepicker"}, placeholder: "Date", as: :string %>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <%= f.input :hrs_work, input_html: {class: "form-control"}, placeholder: "*" %>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <%= f.input :address, input_html: {class: "form-control"}, placeholder: "address" %>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <%= f.submit "Book", class: "btn btn-primary" %>
+                      </div>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+            </div>
+
