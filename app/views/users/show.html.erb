@@ -71,27 +71,26 @@
 <!--   *** REVIEWS ***-->
 <section class="background-gray-lightest">
   <div class="container clearfix">
+
     <h2>Reviews</h2>
-    <div class="container-reviews">
-      <div class="col-sm-12">
-           <% @user.reviews.each do |review| %>
-        <div class="row">
-           <div class="review">
-           <div class="input">
-           <div class="rating">
-            <% review.rating.to_i.times do  %>
-            <span class="pe-7s-star"></span>
-            <% end %>
-          </div>
-          <div class="testimonial">
-            <%= review.testimonial %>
+    <div class="cleaners-review-container">
+      <% @user.reviews.each do |review| %>
+           <div class="cleaners-review">
+             <div class="input">
+               <div class="rating">
+                <% review.rating.to_i.times do  %>
+                <span class="pe-7s-star"></span>
+                <% end %>
+              </div>
+              <div class="testimonial">
+                <%= review.testimonial %>
+              </div>
             </div>
           </div>
-          </div>
-        </div>
-          <% end %>
-    </div>
+
+      <% end %>
   </div>
+
 </div>
 </section>
 
