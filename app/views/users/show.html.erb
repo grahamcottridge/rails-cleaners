@@ -6,7 +6,10 @@
           <div class="image"><a href="#">
             <% user_photo = @user.facebook_picture_url || (@user.photo? ? cl_image_path( @user.photo.path, :crop => "fill") : "http://via.placeholder.com/350x150") %>
             <%= cl_image_tag user_photo, class: "img-responsive" %>
-            <h1><%= @user.first_name%></h1>
+            <h1><%= @user.first_name%> <% @user.reviews.average(:rating).to_i.times do  %>
+              <span class="pe-7s-star"></span>
+            <% end %>
+            </h1>
           </div>
         </div>
       </div>
